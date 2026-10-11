@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Doctor Speed</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1 class="visually-hidden">Doctor Speed</h1>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">
+    <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <line x1="12" y1="2.5" x2="12" y2="4.8"/>
+        <line x1="12" y1="19.2" x2="12" y2="21.5"/>
+        <line x1="2.5" y1="12" x2="4.8" y2="12"/>
+        <line x1="19.2" y1="12" x2="21.5" y2="12"/>
+        <line x1="5.3" y1="5.3" x2="6.9" y2="6.9"/>
+        <line x1="17.1" y1="17.1" x2="18.7" y2="18.7"/>
+        <line x1="5.3" y1="18.7" x2="6.9" y2="17.1"/>
+        <line x1="17.1" y1="6.9" x2="18.7" y2="5.3"/>
+      </g>
+    </svg>
+    <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <main class="dashboard">
+    <section class="panel panel-speed" aria-labelledby="speed-heading">
+      <h2 id="speed-heading" class="panel-title">Check your ISP Capacity</h2>
+
+      <div class="reading">
+        <div class="reading-line">
+          <span id="speed-value" class="reading-value"></span>
+          <span class="reading-unit">Mbps</span>
+        </div>
+        <span id="reading-label" class="reading-label">Go press the button to check your internet speed</span>
+      </div>
+
+      <button id="go-button" class="go-button" type="button" aria-label="Start speed test" aria-describedby="test-status">
+        <span id="go-label">GO</span>
+      </button>
+
+      <p id="test-status" class="status" role="status" aria-live="polite"></p>
+
+      <div id="test-error" class="error-box" hidden>
+        <p id="error-message" class="error-message"></p>
+        <p class="error-hint">Press <strong>RETRY</strong> to run the test again.</p>
+      </div>
+
+     
+    </section>
+
+    <section class="panel panel-time" aria-labelledby="clock-heading">
+      <h2 id="clock-heading" class="visually-hidden">Current time</h2>
+
+      <div id="analog-clock" class="clock" role="img" aria-label="Analog clock">
+        <div class="ticks ticks-minor" aria-hidden="true"></div>
+        <div class="ticks ticks-major" aria-hidden="true"></div>
+
+        <div class="numbers" aria-hidden="true">
+          <div class="num"><span>1</span></div>
+          <div class="num"><span>2</span></div>
+          <div class="num"><span>3</span></div>
+          <div class="num"><span>4</span></div>
+          <div class="num"><span>5</span></div>
+          <div class="num"><span>6</span></div>
+          <div class="num"><span>7</span></div>
+          <div class="num"><span>8</span></div>
+          <div class="num"><span>9</span></div>
+          <div class="num"><span>10</span></div>
+          <div class="num"><span>11</span></div>
+          <div class="num"><span>12</span></div>
+        </div>
+
+        <div id="hour-hand" class="hand hand-hour" aria-hidden="true"></div>
+        <div id="minute-hand" class="hand hand-minute" aria-hidden="true"></div>
+        <div id="second-hand" class="hand hand-second" aria-hidden="true"></div>
+        <div class="pivot" aria-hidden="true"></div>
+      </div>
+
+      <time id="digital-time" class="digital-time">
+        <span id="time-main"></span>
+        <span id="time-period" class="time-period"></span>
+      </time>
+      <time id="date-text" class="date"></time>
+      <p class="timezone">Local time · <span id="timezone-text"></span></p>
+    </section>
+  </main>
+</body>
+</html>
